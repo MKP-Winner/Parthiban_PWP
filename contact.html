@@ -15,7 +15,7 @@
     <ul class="navbar">
       <li><a href="index.html">Home</a></li>
       <li><a href="interests.html">Interests</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
   </nav>
 
@@ -34,9 +34,59 @@
           View My Repositories
         </a>
       </p>
-      <p><strong>Message:</strong> Feel free to reach out via email or connect with me on LinkedIn or GitHub. I’m always open to collaboration, learning opportunities, and professional networking.</p>
+      <p><strong>Message:</strong> Feel free to reach out via email or connect with me on LinkedIn or GitHub. I'm always open to collaboration, learning opportunities, and professional networking.</p>
     </section>
   </main>
+
+  <div class="form-container">
+    <h2>Get in Touch</h2>
+    <form action="#" method="post">
+      
+      <div class="form-group">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required placeholder="Your full name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" title="Format: XXX-XXX-XXXX">
+      </div>
+
+      <div class="form-group">
+        <label>Type of Message *</label>
+        <div class="radio-group" style="display: flex; flex-direction: column; gap: 6px;">
+          <label>
+            <input type="radio" name="message_type" value="question" required>
+            Question
+          </label>
+
+          <label>
+            <input type="radio" name="message_type" value="comment" required>
+            Comment
+          </label>
+
+          <label>
+            <input type="radio" name="message_type" value="suggestion" required>
+            Suggestion
+          </label>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" rows="6" required minlength="10" placeholder="Please provide detailed information (minimum 10 characters)"></textarea>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
   <footer>
     <p>Return to the <a href="index.html">Home Page</a></p>
     <p>&copy; 2025, MithunKarthick Parthiban</p>

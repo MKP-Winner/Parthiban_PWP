@@ -9,7 +9,6 @@
 
 * {
   box-sizing: border-box;
-  
 }
 
 body {
@@ -41,6 +40,10 @@ header img {
   border: 4px solid #898C90;
 }
 
+header img:hover {
+  transform: scale(1.05);
+}
+
 .name {
   font-size: 2rem;
   color: #EEF1EE;
@@ -66,11 +69,47 @@ nav ul.navbar a {
   color: #EEF1EE;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease;
 }
 
 nav ul.navbar a:hover {
   color: #8D816B;
+}
+
+nav ul.navbar a.active {
+  background-color: #8D816B;
+  color: #3A414D;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+  padding: 0;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.box {
+  flex: 1;
+  min-width: 260px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1.5px solid #898C90;
+  margin: 0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.box:nth-child(odd) {
+  background-color: rgba(58, 65, 77, 0.82);
+  color: #EEF1EE;
+}
+
+.box:nth-child(even) {
+  background-color: rgba(238, 241, 238, 0.92);
+  color: #3A414D;
 }
 
 .main-content {
@@ -85,24 +124,24 @@ nav ul.navbar a:hover {
   min-width: 260px;
   padding: 20px;
   border-radius: 10px;
-  border: 1.5px solid #898C90;    /* new addition for card effect */
-  margin-bottom: 12px;             /* small gap below on mobile */
+  border: 1.5px solid #898C90;
+  margin-bottom: 12px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
 .left {
-  background-color: rgba(58, 65, 77, 0.82);    /* Semi-transparent Blue-Gray */
+  background-color: rgba(58, 65, 77, 0.82);
   color: #EEF1EE;
 }
 
 .middle {
-  background-color: rgba(238, 241, 238, 0.92); /* Semi-transparent Light Shade */
+  background-color: rgba(238, 241, 238, 0.92);
   color: #3A414D;
   flex: 2;
 }
 
 .right {
-  background-color: rgba(58, 65, 77, 0.82);    /* Semi-transparent Blue-Gray */
+  background-color: rgba(58, 65, 77, 0.82);
   color: #EEF1EE;
 }
 
@@ -113,7 +152,8 @@ h2 {
 }
 
 .left h2,
-.right h2 {
+.right h2,
+.box:nth-child(odd) h2 {
   color: #8D816B;
 }
 
@@ -140,6 +180,72 @@ em {
   color: #ffffff;
 }
 
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: rgba(238, 241, 238, 0.95);
+  padding: 30px;
+  border-radius: 12px;
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+  color: #3A414D;
+  margin-bottom: 8px;
+  margin-top: 15px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #898C90;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #8D816B;
+  box-shadow: 0 0 8px rgba(141, 129, 107, 0.3);
+}
+
+form input[type="radio"] {
+  width: auto;
+  margin-right: 5px;
+}
+
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+  background-color: #8D816B;
+}
+
+button[type="submit"]:focus,
+input[type="submit"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(141, 129, 107, 0.4);
+}
+
+button[type="submit"],
+input[type="submit"] {
+  background-color: #3A414D;
+  color: #EEF1EE;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+a:hover {
+  color: #7A5C5C;
+}
+
 footer {
   background-color: #82878e;
   color: #EEF1EE;
@@ -160,6 +266,10 @@ footer a:hover {
 }
 
 @media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
   .main-content {
     flex-direction: column;
   }
@@ -169,6 +279,10 @@ footer a:hover {
     align-items: center;
   }
 
+  nav ul.navbar li {
+    margin: 5px 0;
+  }
+
   header img {
     width: 100px;
     height: 100px;
@@ -176,7 +290,5 @@ footer a:hover {
 
   .name {
     font-size: 1.5rem;
-    color: #7A5C5C;
-    font-family: Arial, sans-serif;
   }
 }
